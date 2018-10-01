@@ -1,0 +1,11 @@
+[alias]
+ co = checkout 
+ cob = checkout -b
+ ci = commit -am
+ st = status
+ br = branch
+ a = add -A
+ unstage = reset HEAD --
+ pu = push -
+ sta = stash --save
+ stap = stash pop
