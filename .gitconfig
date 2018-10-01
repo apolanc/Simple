@@ -6,6 +6,7 @@
  br = branch
  a = add -A
  unstage = reset HEAD --
- pu = push -
+ pu = push -u
+ p = push
  sta = stash --save
  stap = stash pop
