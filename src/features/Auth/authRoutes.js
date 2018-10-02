@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { Login, Register, ForgotPassword } from ".";
+import "./Auth.css";
 
 export default [
   <Redirect exact="/" from="/" to="/login" />,

@@ -1,3 +1,19 @@
-export { default as Login } from "./Containers/Login";
-export { default as Register } from "./Containers/Register";
-export { default as ForgotPassword } from "./Containers/ForgotPassword";
+import { ForgotPassword, Register, Login } from "./containers";
+import {
+  AuthFormContainer,
+  ForgotPasswordForm,
+  LoginForm,
+  RegisterForm,
+  AuthFormContent
+} from "./components";
+
+export {
+  ForgotPassword,
+  Register,
+  Login,
+  AuthFormContainer,
+  ForgotPasswordForm,
+  LoginForm,
+  RegisterForm,
+  AuthFormContent
+};

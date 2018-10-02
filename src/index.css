@@ -4,6 +4,11 @@ body > #root {
   height: 100%;
 }
 
+html {
+  background-color: #f0f0f0;
+  font-family: sans-serif;
+}
+
 body {
   margin: 0;
   padding: 0;

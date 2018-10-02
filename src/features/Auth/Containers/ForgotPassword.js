@@ -1,14 +1,20 @@
 import React, { Component } from "react";
-import ForgotPasswordForm from "../Components/ForgotPasswordForm";
+import {
+  ForgotPasswordForm,
+  AuthFormContainer,
+  AuthFormContent
+} from "../components";
 
 export default class ForgotPassword extends Component {
   componentDidCatch() {}
 
   render() {
     return (
-      <div className="container">
-        <ForgotPasswordForm />
-      </div>
+      <AuthFormContainer>
+        <AuthFormContent>
+          <ForgotPasswordForm />
+        </AuthFormContent>
+      </AuthFormContainer>
     );
   }
 }

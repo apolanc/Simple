@@ -1,14 +1,20 @@
 import React, { Component } from "react";
-import RegisterForm from "../Components/RegisterForm";
+import {
+  RegisterForm,
+  AuthFormContainer,
+  AuthFormContent
+} from "../components";
 
 export default class Login extends Component {
   componentDidCatch() {}
 
   render() {
     return (
-      <div className="container">
-        <RegisterForm />
-      </div>
+      <AuthFormContainer>
+        <AuthFormContent>
+          <RegisterForm />
+        </AuthFormContent>
+      </AuthFormContainer>
     );
   }
 }
