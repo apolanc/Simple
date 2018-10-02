@@ -8,5 +8,4 @@
  unstage = reset HEAD --
  pu = push -u
  p = push
- sta = stash --save
  stap = stash pop
