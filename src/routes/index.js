@@ -1,6 +1,3 @@
-import React from "react";
-import { Route } from "react-router-dom";
+import authRoutes from "../features/Auth/authRoutes";
 
-export default [
-  // <Route exact patch="/" component={} />
-];
+export default [...authRoutes];

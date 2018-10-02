@@ -1,14 +1,12 @@
 import React from "react";
-import logo from "./logo.svg";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
+import routes from "./routes";
 import "./App.css";
 
 const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h1 className="App-title">Welcome to React</h1>
-    </header>
-  </div>
+  <Router>
+    <Switch>{routes}</Switch>
+  </Router>
 );
 
 export default App;
