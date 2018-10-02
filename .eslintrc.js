@@ -2,8 +2,7 @@ module.exports = {
   extends: ["airbnb", "plugin:prettier/recommended"],
   plugins: ["react", "jsx-a11y", "import"],
   rules: {
-    "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
-    "linebreak-style": 0
+    "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }]
   },
   env: {
     browser: true
