@@ -15,7 +15,7 @@ AuthFormContent.defaultProps = {
 };
 
 AuthFormContent.propTypes = {
-  children: PropTypes.func
+  children: PropTypes.element
 };
 
 export default AuthFormContent;

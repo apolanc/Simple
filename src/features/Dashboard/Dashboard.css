@@ -1,0 +1,57 @@
+.navbar {
+  background-color: #ffffff;
+  height: 60px;
+}
+
+.dashboard-container {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 10px 18px -8px lightgrey;
+  justify-content: center;
+}
+
+.content-container {
+  background-color: white;
+  height: 80%;
+  width: 50%;
+  border-radius: 5px;
+  box-shadow: 0 10px 40px -14px rgba(0, 0, 0, 0.55);
+  z-index: 10000;
+}
+
+.dashboard-logo {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  margin: 4px 0px 7px 10px;
+  height: 35px;
+}
+
+.logout-link {
+  flex: 0.89;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.logo-link {
+  flex: 0.1;
+}
+
+.logout-btn {
+  background-color: transparent;
+  color: #0040bf;
+  border-radius: 5px;
+  height: 29px;
+  border: 1px solid lightgray;
+  width: 80px;
+}
+
+.logout-btn:hover {
+  background-color: #0040bf;
+  color: white;
+  border: 1px solid #0040bf;
+}
