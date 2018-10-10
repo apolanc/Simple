@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const LoginForm = ({ Authenticate }) => (
+const LoginForm = ({ authenticate }) => (
   <Fragment>
     <input type="text" className="user" placeholder="Username" />
     <input type="password" className="pass" placeholder="Password" />
@@ -13,7 +13,7 @@ const LoginForm = ({ Authenticate }) => (
       <button
         type="button"
         className="submit-btn"
-        onClick={() => Authenticate()}
+        onClick={() => authenticate()}
       >
         Login
       </button>
@@ -27,7 +27,7 @@ const LoginForm = ({ Authenticate }) => (
 );
 
 LoginForm.propTypes = {
-  Authenticate: PropTypes.func.isRequired
+  authenticate: PropTypes.func.isRequired
 };
 
 export default LoginForm;

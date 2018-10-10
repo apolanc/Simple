@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class FirstPage extends Component {
+export default class MainPage extends Component {
   componentDidMount() {}
 
   render() {

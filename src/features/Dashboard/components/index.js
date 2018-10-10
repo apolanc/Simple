@@ -1,2 +1,2 @@
 export { default as Navbar } from "./Navbar";
-export { default as N } from ".";
+export { default as CompletionPercent } from "./CompletionPercent";

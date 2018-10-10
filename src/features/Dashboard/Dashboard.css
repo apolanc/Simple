@@ -1,4 +1,4 @@
-.navbar {
+.dashboard-navbar {
   background-color: #ffffff;
   height: 60px;
 }
@@ -18,7 +18,7 @@
   width: 50%;
   border-radius: 5px;
   box-shadow: 0 10px 40px -14px rgba(0, 0, 0, 0.55);
-  z-index: 10000;
+  z-index: 10;
 }
 
 .dashboard-logo {
@@ -43,7 +43,7 @@
 
 .logout-btn {
   background-color: transparent;
-  color: #0040bf;
+  color: #395dad;
   border-radius: 5px;
   height: 29px;
   border: 1px solid lightgray;
@@ -51,7 +51,82 @@
 }
 
 .logout-btn:hover {
-  background-color: #0040bf;
+  background-color: #395dad;
   color: white;
-  border: 1px solid #0040bf;
+  border: 1px solid #395dad;
+}
+
+.completion-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.completion-logo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.completion-checkpoints-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.completion-checkpoints {
+  font-size: 14pt;
+  list-style: none;
+  padding: 0;
+}
+
+.completion-checkpoints-item {
+  margin: 10px;
+}
+
+.check {
+  font-size: 20pt;
+  color: #2ca02c;
+  margin-right: 10px;
+}
+
+.check-disabled {
+  font-size: 20pt;
+  color: gray;
+  margin-right: 10px;
+}
+
+.completion-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.completion-info p {
+  font-weight: bold;
+  font-size: 11pt;
+}
+
+.completion-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.completion-button-container button {
+  background-color: #4b9ddd;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid #4b9ddd;
+  height: 40px;
+  width: 90%;
+  font-size: 15pt;
+}
+
+.completion-button-container button:hover {
+  background-color: #395dad;
+  color: white;
+  border: 1px solid #395dad;
 }

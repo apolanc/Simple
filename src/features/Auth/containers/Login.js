@@ -7,10 +7,10 @@ export default class Login extends Component {
   constructor(props) {
     super(props);
     this.utils = utils;
-    this.Authenticate = this.Authenticate.bind(this);
+    this.authenticate = this.authenticate.bind(this);
   }
 
-  Authenticate() {
+  authenticate() {
     const { history } = this.props;
     this.utils.singin();
     history.push("/dashboard");
@@ -20,7 +20,7 @@ export default class Login extends Component {
     return (
       <AuthFormContainer>
         <AuthFormContent>
-          <LoginForm Authenticate={this.Authenticate} />
+          <LoginForm authenticate={this.authenticate} />
         </AuthFormContent>
       </AuthFormContainer>
     );

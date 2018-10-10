@@ -1,2 +1,2 @@
 export { default as Dashboard } from "./Dashboard";
-export { default as FirstPage } from "./FirstPage";
+export { default as MainPage } from "./MainPage";
