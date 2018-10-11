@@ -15,10 +15,9 @@
 .content-container {
   background-color: white;
   height: 80%;
-  width: 50%;
+  width: 35%;
   border-radius: 5px;
   box-shadow: 0 10px 40px -14px rgba(0, 0, 0, 0.55);
-  z-index: 10;
 }
 
 .dashboard-logo {
@@ -43,7 +42,7 @@
 
 .logout-btn {
   background-color: transparent;
-  color: #395dad;
+  color: #4b9ddd;
   border-radius: 5px;
   height: 29px;
   border: 1px solid lightgray;
@@ -51,9 +50,9 @@
 }
 
 .logout-btn:hover {
-  background-color: #395dad;
+  background-color: #4b9ddd;
   color: white;
-  border: 1px solid #395dad;
+  border: 1px solid #4b9ddd;
 }
 
 .completion-container {

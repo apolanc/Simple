@@ -1,0 +1,77 @@
+.requirements-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.requirements-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10% 0% 5% 0%;
+}
+
+.requirements-slider-container {
+  padding: 10%;
+}
+
+.slider-text-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.slider-text-label {
+}
+
+.requirements-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+
+.requirements-button {
+  background-color: #4b9ddd;
+  color: white;
+  border: 1px solid #4b9ddd;
+  border-radius: 5px;
+  height: 36px;
+  width: 15%;
+}
+
+.requirements-button:hover {
+  background-color: #395dad;
+  color: white;
+  border: 1px solid #395dad;
+}
+
+.form-row {
+  margin: 15px;
+}
+
+.label-container {
+  padding: 5px;
+}
+
+/* Slider CSS */
+
+.rc-slider-rail {
+  height: 10px;
+}
+
+.rc-slider-step {
+  height: 10px;
+}
+
+.rc-slider-track {
+  height: 10px;
+  background-color: #4b9ddd;
+}
+
+.rc-slider-handle {
+  width: 20px;
+  height: 20px;
+  border: solid 2px #4b9ddd;
+}
+
+.rc-slider-handle:hover {
+  border: 2px solid #4b9ddd;
+}

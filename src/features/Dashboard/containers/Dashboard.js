@@ -5,6 +5,7 @@ import { Navbar, CompletionPercent } from "../components";
 import MainPage from "./MainPage";
 import utils from "../../../utils";
 import { Modal } from "../../../common";
+import { ProcessingRequirements } from "../../ProcessingRequirements";
 
 export default class Dashboard extends Component {
   constructor() {
@@ -29,7 +30,9 @@ export default class Dashboard extends Component {
     return (
       <Fragment>
         <Navbar logout={this.logout} />
-        <MainPage />
+        <MainPage>
+          <ProcessingRequirements />
+        </MainPage>
         <Modal
           component={CompletionPercent}
           show={show}
