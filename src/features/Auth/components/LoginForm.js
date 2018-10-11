@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 const LoginForm = ({ authenticate }) => (
   <Fragment>
-    <input type="text" className="user" placeholder="Username" />
-    <input type="password" className="pass" placeholder="Password" />
+    <input className="auth-input" type="text" placeholder="Username" />
+    <input className="auth-input" type="password" placeholder="Password" />
     <div className="forgot-passw">
       <Link to="/forgot-password">Forgot Password?</Link>
     </div>
