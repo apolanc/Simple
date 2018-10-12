@@ -1,6 +1,9 @@
 .dashboard-navbar {
   background-color: #ffffff;
   height: 60px;
+  z-index: 1000;
+  width: 100%;
+  position: absolute;
 }
 
 .dashboard-container {
@@ -15,7 +18,7 @@
 .content-container {
   background-color: white;
   height: 80%;
-  width: 35%;
+  min-height: 585px;
   border-radius: 5px;
   box-shadow: 0 10px 40px -14px rgba(0, 0, 0, 0.55);
 }

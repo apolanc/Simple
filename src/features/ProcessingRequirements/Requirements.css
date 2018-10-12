@@ -1,6 +1,7 @@
 .requirements-container {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .requirements-form-container {
@@ -17,9 +18,15 @@
 .slider-text-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
-.slider-text-label {
+.slider-text-label-left {
+  width: 100px;
+}
+
+.slider-text-label-right {
+  width: 131px;
 }
 
 .requirements-button-container {
