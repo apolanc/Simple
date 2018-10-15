@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "immutable": "^3.8.2",
+    "ky": "^0.4.1",
     "prop-types": "^15.6.2",
     "rc-slider": "^8.6.3",
     "rc-tooltip": "^3.7.3",
