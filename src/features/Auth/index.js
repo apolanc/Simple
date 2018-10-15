@@ -6,6 +6,7 @@ import {
   RegisterForm,
   AuthFormContent
 } from "./components";
+import authReducer from "./authReducer";
 
 export {
   ForgotPassword,
@@ -15,5 +16,6 @@ export {
   ForgotPasswordForm,
   LoginForm,
   RegisterForm,
-  AuthFormContent
+  AuthFormContent,
+  authReducer
 };
