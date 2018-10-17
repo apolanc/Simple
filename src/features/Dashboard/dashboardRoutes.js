@@ -1,7 +1,7 @@
 import React from "react";
-import { Dashboard, FirstPage } from ".";
+import { Dashboard, MainPage } from ".";
 import { PrivateRoute } from "../../common";
-import utils from "../../utils";
+import { isAuthenticated } from "../../utils";
 import "./Dashboard.css";
 
 export default [
@@ -10,14 +10,14 @@ export default [
     key="dash"
     path="/dashboard"
     component={Dashboard}
-    isAuthenticated={utils.isAuthenticated}
+    isAuthenticated={isAuthenticated}
   />,
 
   <PrivateRoute
     exact
-    key="first"
-    path="/first-page"
-    component={FirstPage}
-    isAuthenticated={utils.isAuthenticated}
+    key="main"
+    path="/main"
+    component={MainPage}
+    isAuthenticated={isAuthenticated}
   />
 ];

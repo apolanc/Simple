@@ -93,6 +93,10 @@
   margin-right: 10px;
 }
 
+.check:hover {
+  cursor: pointer;
+}
+
 .check-disabled {
   font-size: 20pt;
   color: gray;

@@ -1,7 +1,16 @@
-const utils = {
-  isAuthenticated: () => localStorage.getItem("logged"),
-  singin: () => localStorage.setItem("logged", true),
-  singout: () => localStorage.setItem("logged", false)
-};
+import { ProcessingRequirements } from "./features/ProcessingRequirements";
 
-export default utils;
+export const isAuthenticated = () => localStorage.getItem("logged");
+
+export const login = () => localStorage.setItem("logged", true);
+
+export const logout = () => localStorage.setItem("logged", false);
+
+export const componentDispenser = type => {
+  switch (type) {
+    case "Processing Requirements":
+      return ProcessingRequirements;
+    default:
+      return "";
+  }
+};

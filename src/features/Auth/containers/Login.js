@@ -5,18 +5,17 @@ import ReactRouterPropTypes from "react-router-prop-types";
 
 import { signIn } from "../authActions";
 import { LoginForm, AuthFormContainer, AuthFormContent } from "../components";
-import utils from "../../../utils";
+import { login } from "../../../utils";
 
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.utils = utils;
     this.authenticate = this.authenticate.bind(this);
   }
 
   authenticate() {
     const { history } = this.props;
-    this.utils.singin();
+    login();
     history.push("/dashboard");
   }
 
