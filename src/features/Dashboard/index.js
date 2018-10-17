@@ -1,4 +1,4 @@
-import { Dashboard, FirstPage } from "./containers";
+import { Dashboard, MainPage } from "./containers";
 import { Navbar } from "./components";
 
-export { Navbar, Dashboard, FirstPage };
+export { Navbar, Dashboard, MainPage };

@@ -1,3 +1,5 @@
+import "./Requirements.css";
+
 import { ProcessingRequirements } from "./containers";
 import { PRequirementsForm, PRequirementsSlider } from "./components";
 

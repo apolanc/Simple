@@ -1,9 +1,10 @@
 import React from "react";
 import Proptypes from "prop-types";
+import IconToggle from "./IconToggle";
 
 const logo = "/assets/logo.png";
 
-const CompletionPercent = ({ onContinue }) => (
+const CompletionPercent = ({ onContinue, onIconToggle }) => (
   <div className="completion-container">
     <div className="completion-logo-container">
       <img src={logo} className="completion-logo" alt="logo" />
@@ -14,28 +15,28 @@ const CompletionPercent = ({ onContinue }) => (
     <div className="completion-checkpoints-container">
       <ul className="completion-checkpoints">
         <li className="completion-checkpoints-item">
-          <i className="far fa-check-circle fa-fw check" />
-          Processing Requirements
+          <IconToggle
+            name="Processing Requirements"
+            onIconToggle={onIconToggle}
+          />
         </li>
         <li className="completion-checkpoints-item">
-          <i className="far fa-check-circle fa-fw check" />
-          Business Information
+          <IconToggle name="Business Information" onIconToggle={onIconToggle} />
         </li>
         <li className="completion-checkpoints-item">
-          <i className="far fa-check-circle fa-fw check" />
-          Business References
+          <IconToggle name="Business References" onIconToggle={onIconToggle} />
         </li>
         <li className="completion-checkpoints-item">
-          <i className="far fa-check-circle fa-fw check-disabled" />
-          Ownership Information
+          <IconToggle
+            name="Ownership Information"
+            onIconToggle={onIconToggle}
+          />
         </li>
         <li className="completion-checkpoints-item">
-          <i className="far fa-check-circle fa-fw check-disabled" />
-          Compliance Review
+          <IconToggle name="Compliance Review" onIconToggle={onIconToggle} />
         </li>
         <li className="completion-checkpoints-item">
-          <i className="far fa-check-circle fa-fw check-disabled" />
-          Provide Statements
+          <IconToggle name="Provide Statements" onIconToggle={onIconToggle} />
         </li>
       </ul>
     </div>
@@ -58,8 +59,13 @@ const CompletionPercent = ({ onContinue }) => (
   </div>
 );
 
+CompletionPercent.defaultProps = {
+  onIconToggle: () => {}
+};
+
 CompletionPercent.propTypes = {
-  onContinue: Proptypes.func.isRequired
+  onContinue: Proptypes.func.isRequired,
+  onIconToggle: Proptypes.func
 };
 
 export default CompletionPercent;

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { PRequirementsForm, PRequirementsSlider } from "../components";
-import "../Requirements.css";
 
 export default class ProcessingRequirements extends Component {
   componentDidMount() {}
