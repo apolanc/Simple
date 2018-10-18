@@ -11,7 +11,7 @@ export default class Dashboard extends React.Component {
     super();
     this.logout = this.logout.bind(this);
     this.onContinue = this.onContinue.bind(this);
-    this.onIconToggle = this.onIconToggle.bind(this);
+    this.onComponentRedirect = this.onComponentRedirect.bind(this);
     this.state = { show: true, component: null };
   }
 
@@ -20,9 +20,16 @@ export default class Dashboard extends React.Component {
     this.renderComponent("Processing Requirements");
   }
 
-  onIconToggle({ target }) {
-    const { id } = target;
-    this.renderComponent(id);
+  onComponentRedirect(evt = {}, name = "") {
+    if (evt.stopPropagation) {
+      evt.stopPropagation();
+    }
+
+    const {
+      target: { id }
+    } = evt;
+
+    this.renderComponent(id || name);
     this.setState({ show: false });
   }
 
@@ -41,12 +48,16 @@ export default class Dashboard extends React.Component {
     return (
       <Fragment>
         <Navbar logout={this.logout} />
-        <MainPage>{Component && <Component />}</MainPage>
+        <MainPage>
+          {Component && (
+            <Component onComponentRedirect={this.onComponentRedirect} />
+          )}
+        </MainPage>
         <Modal
           component={CompletionPercent}
           show={show}
           onContinue={this.onContinue}
-          onIconToggle={this.onIconToggle}
+          onIconToggle={this.onComponentRedirect}
         />
       </Fragment>
     );

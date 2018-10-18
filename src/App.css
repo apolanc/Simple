@@ -30,3 +30,24 @@
 button:hover {
   cursor: pointer;
 }
+
+.forms-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 55px;
+}
+
+.forms-button {
+  background-color: #4b9ddd;
+  color: white;
+  border: 1px solid #4b9ddd;
+  border-radius: 5px;
+  height: 36px;
+  width: 15%;
+}
+
+.forms-button:hover {
+  background-color: #395dad;
+  color: white;
+  border: 1px solid #395dad;
+}

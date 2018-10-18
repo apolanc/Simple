@@ -1,5 +1,6 @@
 import { OwnershipInfo } from "./features/OwnershipInformation";
 import { ProcessingRequirements } from "./features/ProcessingRequirements";
+import { BusinessInformation } from "./features/BusinessInformation";
 
 export const isAuthenticated = () => localStorage.getItem("logged");
 
@@ -13,6 +14,8 @@ export const componentDispenser = type => {
       return OwnershipInfo;
     case "Processing Requirements":
       return ProcessingRequirements;
+    case "Business Information":
+      return BusinessInformation;
     default:
       return "";
   }
