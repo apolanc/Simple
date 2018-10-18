@@ -17,10 +17,11 @@
 
 .content-container {
   background-color: white;
-  height: 80%;
-  min-height: 585px;
   border-radius: 5px;
+  -webkit-box-shadow: 0 10px 40px -14px rgba(0, 0, 0, 0.55);
   box-shadow: 0 10px 40px -14px rgba(0, 0, 0, 0.55);
+  max-width: 90%;
+  max-height: 90%;
 }
 
 .dashboard-logo {

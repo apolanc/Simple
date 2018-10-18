@@ -1,4 +1,5 @@
 import { ProcessingRequirements } from "./features/ProcessingRequirements";
+import { BusinessInformation } from "./features/BusinessInformation";
 
 export const isAuthenticated = () => localStorage.getItem("logged");
 
@@ -10,6 +11,8 @@ export const componentDispenser = type => {
   switch (type) {
     case "Processing Requirements":
       return ProcessingRequirements;
+    case "Business Information":
+      return BusinessInformation;
     default:
       return "";
   }

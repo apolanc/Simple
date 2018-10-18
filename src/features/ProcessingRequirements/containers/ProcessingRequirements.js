@@ -1,8 +1,15 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+
 import { PRequirementsForm, PRequirementsSlider } from "../components";
 
-export default class ProcessingRequirements extends Component {
+class ProcessingRequirements extends Component {
   componentDidMount() {}
+
+  redirectAndSave(evt = {}, name) {
+    const { onComponentRedirect } = this.props;
+    onComponentRedirect(evt, name);
+  }
 
   render() {
     return (
@@ -13,12 +20,26 @@ export default class ProcessingRequirements extends Component {
         <div className="requirements-slider-container">
           <PRequirementsSlider />
         </div>
-        <div className="requirements-button-container">
-          <button type="button" className="requirements-button">
+        <footer className="forms-button-container">
+          <button
+            type="button"
+            className="forms-button"
+            onClick={e => this.redirectAndSave(e, "Business Information")}
+          >
             Next
           </button>
-        </div>
+        </footer>
       </div>
     );
   }
 }
+
+ProcessingRequirements.defaultProps = {
+  onComponentRedirect: () => {}
+};
+
+ProcessingRequirements.propTypes = {
+  onComponentRedirect: PropTypes.func
+};
+
+export default ProcessingRequirements;
