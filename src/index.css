@@ -1,9 +1,8 @@
-html,
 body,
-body > #root {
-  height: 100%;
-  overflow-y: auto;
-  background-color: #f2f2f2;
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+  background-color: whitesmoke;
 }
 
 html {
