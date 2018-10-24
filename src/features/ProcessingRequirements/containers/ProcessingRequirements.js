@@ -1,7 +1,33 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import { PRequirementsForm, PRequirementsSlider } from "../components";
+// import { PRequirementsForm, PRequirementsSlider } from "../components";
+import { Card, Grid, Row, FormGroup } from "../../../common";
+
+const CardContent = () => (
+  <form>
+    <Row>
+      <div className="col-md-6">
+        <FormGroup>
+          <label htmlFor="test">Monthly Sales Amount</label>
+          <input type="text" placeholder="$" className="form-control" />
+        </FormGroup>
+      </div>
+      <div className="col-md-6">
+        <FormGroup>
+          <label htmlFor="test">Monthly Volume Count</label>
+          <input type="text" placeholder="$" className="form-control" />
+        </FormGroup>
+      </div>
+    </Row>
+  </form>
+);
+
+const footerContent = () => (
+  <button type="button" className="btn btn-primary float-right">
+    Next
+  </button>
+);
 
 class ProcessingRequirements extends Component {
   componentDidMount() {}
@@ -13,22 +39,18 @@ class ProcessingRequirements extends Component {
 
   render() {
     return (
-      <div className="requirements-container">
-        <div className="requirements-form-container">
-          <PRequirementsForm />
-        </div>
-        <div className="requirements-slider-container">
-          <PRequirementsSlider />
-        </div>
-        <footer className="forms-button-container">
-          <button
-            type="button"
-            className="forms-button"
-            onClick={e => this.redirectAndSave(e, "Business Information")}
-          >
-            Next
-          </button>
-        </footer>
+      <div className="content">
+        <Grid fluid>
+          <Row>
+            <div className="col-md-4 offset-md-4">
+              <Card
+                title="Sales Estimate"
+                content={CardContent()}
+                footerContent={footerContent()}
+              />
+            </div>
+          </Row>
+        </Grid>
       </div>
     );
   }
