@@ -1,10 +1,9 @@
-import React, { Fragment } from "react";
+import React from "react";
 import ReactRouterPropTypes from "react-router-prop-types";
 import { Switch } from "react-router-dom";
 
-import { Navbar, CompletionPercent } from "../components";
+import { Navbar } from "../components";
 import { logout, returnRoute } from "../../../utils";
-import { PrivateRoute } from "../../../common";
 import dashboardRoutes from "../dashboardRoutes";
 
 export default class Dashboard extends React.Component {
@@ -13,7 +12,15 @@ export default class Dashboard extends React.Component {
     this.logout = this.logout.bind(this);
     this.onContinue = this.onContinue.bind(this);
     this.onComponentRedirect = this.onComponentRedirect.bind(this);
-    this.state = { component: null };
+  }
+
+  componentDidMount() {
+    const {
+      history,
+      match: { path }
+    } = this.props;
+
+    history.push(`${path}/processing-requirements`);
   }
 
   componentDidUpdate() {
@@ -63,5 +70,6 @@ export default class Dashboard extends React.Component {
 }
 
 Dashboard.propTypes = {
-  history: ReactRouterPropTypes.history.isRequired
+  history: ReactRouterPropTypes.history.isRequired,
+  match: ReactRouterPropTypes.match.isRequired
 };

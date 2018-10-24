@@ -6,20 +6,93 @@ import { Card, Grid, Row, FormGroup } from "../../../common";
 
 const CardContent = () => (
   <form>
-    <Row>
-      <div className="col-md-6">
+    <hr />
+    <fieldset>
+      <legend>Sales Estimate</legend>
+      <Row>
+        <div className="col-md-6">
+          <FormGroup>
+            <label className="control-label" htmlFor="test">
+              Monthly Sales Amount
+            </label>
+            <input type="text" className="form-control" />
+          </FormGroup>
+        </div>
+        <div className="col-md-6">
+          <FormGroup>
+            <label className="control-label" htmlFor="test">
+              Monthly Volume Count
+            </label>
+            <input type="text" className="form-control" />
+          </FormGroup>
+        </div>
+        <div className="col-md-4">
+          <FormGroup>
+            <label className="control-label" htmlFor="test">
+              Ticket Avg
+            </label>
+            <input type="text" className="form-control" />
+          </FormGroup>
+        </div>
+        <div className="col-md-4">
+          <FormGroup>
+            <label className="control-label" htmlFor="test">
+              Ticket Minimun
+            </label>
+            <input type="text" className="form-control" />
+          </FormGroup>
+        </div>
+        <div className="col-md-4">
+          <FormGroup>
+            <label className="control-label" htmlFor="test">
+              Ticket Maximun
+            </label>
+            <input type="text" className="form-control" />
+          </FormGroup>
+        </div>
+        <div className="col-md-6">
+          <FormGroup>
+            <label className="control-label" htmlFor="test">
+              Monthly chargeback Amount
+            </label>
+            <input type="text" className="form-control" />
+          </FormGroup>
+        </div>
+        <div className="col-md-6">
+          <FormGroup>
+            <label className="control-label" htmlFor="test">
+              Monthly chargeback Count
+            </label>
+            <input type="text" className="form-control" />
+          </FormGroup>
+        </div>
+      </Row>
+    </fieldset>
+    <hr />
+    <fieldset>
+      <legend>Current Processing</legend>
+      <div className="col-md-12">
         <FormGroup>
-          <label htmlFor="test">Monthly Sales Amount</label>
-          <input type="text" placeholder="$" className="form-control" />
+          <label htmlFor="test">
+            This business has processed credit cards before
+          </label>
+          <input type="checkbox" style={{ marginLeft: 15 }} />
         </FormGroup>
       </div>
-      <div className="col-md-6">
+
+      <div className="col-md-12">
         <FormGroup>
-          <label htmlFor="test">Monthly Volume Count</label>
-          <input type="text" placeholder="$" className="form-control" />
+          <label className="control-label" htmlFor="test">
+            Current Processors
+          </label>
+          <input type="textarea" className="form-control" />
         </FormGroup>
       </div>
-    </Row>
+    </fieldset>
+    <hr />
+    <fieldset>
+      <legend>Payment Methods</legend>
+    </fieldset>
   </form>
 );
 
@@ -44,7 +117,7 @@ class ProcessingRequirements extends Component {
           <Row>
             <div className="col-md-4 offset-md-4">
               <Card
-                title="Sales Estimate"
+                title="Processing Requirements"
                 content={CardContent()}
                 footerContent={footerContent()}
               />
