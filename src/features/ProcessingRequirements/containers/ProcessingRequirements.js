@@ -71,23 +71,19 @@ const CardContent = () => (
     <hr />
     <fieldset>
       <legend>Current Processing</legend>
-      <div className="col-md-12">
-        <FormGroup>
-          <label htmlFor="test">
-            This business has processed credit cards before
-          </label>
-          <input type="checkbox" style={{ marginLeft: 15 }} />
-        </FormGroup>
-      </div>
+      <FormGroup>
+        <label htmlFor="test">
+          This business has processed credit cards before
+        </label>
+        <input type="checkbox" style={{ marginLeft: 15 }} />
+      </FormGroup>
 
-      <div className="col-md-12">
-        <FormGroup>
-          <label className="control-label" htmlFor="test">
-            Current Processors
-          </label>
-          <input type="textarea" className="form-control" />
-        </FormGroup>
-      </div>
+      <FormGroup>
+        <label className="control-label" htmlFor="test">
+          Current Processors
+        </label>
+        <input type="textarea" className="form-control" />
+      </FormGroup>
     </fieldset>
     <hr />
     <fieldset>
