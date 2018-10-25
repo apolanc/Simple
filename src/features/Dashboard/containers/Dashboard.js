@@ -12,8 +12,7 @@ export default class Dashboard extends React.Component {
   constructor() {
     super();
     this.logout = this.logout.bind(this);
-    this.onContinue = this.onContinue.bind(this);
-    this.onComponentRedirect = this.onComponentRedirect.bind(this);
+    this.getCurrentRouteTitle = this.getCurrentRouteTitle.bind(this);
   }
 
   componentDidMount() {
@@ -29,20 +28,14 @@ export default class Dashboard extends React.Component {
     this.mainPanel.scrollTop = 0;
   }
 
-  onContinue() {
-    this.renderComponent("Processing Requirements");
-  }
-
-  onComponentRedirect(evt = {}, name = "") {
-    if (evt.stopPropagation) {
-      evt.stopPropagation();
-    }
-
+  getCurrentRouteTitle() {
     const {
-      target: { id }
-    } = evt;
+      location: { pathname }
+    } = this.props;
 
-    this.renderComponent(id || name);
+    const route = dashboardRoutes.find(r => r.path === pathname);
+
+    return route ? route.name : "";
   }
 
   logout() {
@@ -66,11 +59,16 @@ export default class Dashboard extends React.Component {
             <Grid fluid>
               <Row>
                 <div className="col-md-6 offset-md-3">
-                  <Switch>
-                    {dashboardRoutes.map((route, key) =>
-                      returnRoute(route, key)
-                    )}
-                  </Switch>
+                  <div className="card">
+                    <div className="header">
+                      <h4 className="title">{this.getCurrentRouteTitle()}</h4>
+                    </div>
+                    <Switch>
+                      {dashboardRoutes.map((route, key) =>
+                        returnRoute(route, key)
+                      )}
+                    </Switch>
+                  </div>
                 </div>
               </Row>
             </Grid>
@@ -83,5 +81,6 @@ export default class Dashboard extends React.Component {
 
 Dashboard.propTypes = {
   history: ReactRouterPropTypes.history.isRequired,
-  match: ReactRouterPropTypes.match.isRequired
+  match: ReactRouterPropTypes.match.isRequired,
+  location: ReactRouterPropTypes.location.isRequired
 };
