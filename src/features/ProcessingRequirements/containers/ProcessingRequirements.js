@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import ReactRouterPropTypes from "react-router-prop-types";
 
 // import { PRequirementsForm, PRequirementsSlider } from "../components";
-import { Card, Grid, Row, FormGroup } from "../../../common";
+import { Card, Row, FormGroup } from "../../../common";
 
 const CardContent = () => (
   <form>
@@ -59,7 +59,7 @@ const CardContent = () => (
         <div className="col-md-4">
           <FormGroup>
             <label className="control-label" htmlFor="test">
-              Ticket Minimun
+              Ticket Minimum
             </label>
             <div className="input-group mb-3">
               <div className="input-group-prepend">
@@ -74,7 +74,7 @@ const CardContent = () => (
         <div className="col-md-4">
           <FormGroup>
             <label className="control-label" htmlFor="test">
-              Ticket Maximun
+              Ticket Maximum
             </label>
             <div className="input-group mb-3">
               <div className="input-group-prepend">
@@ -162,19 +162,11 @@ class ProcessingRequirements extends Component {
 
   render() {
     return (
-      <div className="content">
-        <Grid fluid>
-          <Row>
-            <div className="col-md-6 offset-md-3">
-              <Card
-                title="Processing Requirements"
-                content={CardContent()}
-                footerContent={footerContent(this.props.history)}
-              />
-            </div>
-          </Row>
-        </Grid>
-      </div>
+      <Card
+        title="Processing Requirements"
+        content={CardContent()}
+        footerContent={footerContent(this.props.history)}
+      />
     );
   }
 }
