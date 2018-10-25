@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Grid, Row } from "../../../common";
+import { Card } from "../../../common";
 import {
   ExemptionForm,
   SalesInfoForm,
@@ -31,19 +31,11 @@ class BusinessInformation extends Component {
 
   render() {
     return (
-      <div className="content">
-        <Grid fluid>
-          <Row>
-            <div className="col-md-6 offset-md-3">
-              <Card
-                title="Business Information"
-                content={<CardContent />}
-                footerContent={footerContent()}
-              />
-            </div>
-          </Row>
-        </Grid>
-      </div>
+      <Card
+        title="Business Information"
+        content={<CardContent />}
+        footerContent={footerContent()}
+      />
     );
   }
 }

@@ -1,9 +1,11 @@
 import React from "react";
 import ReactRouterPropTypes from "react-router-prop-types";
-import { Switch } from "react-router-dom";
 
+import { Switch } from "react-router-dom";
 import { Navbar } from "../components";
+import { Grid, Row } from "../../../common";
 import { logout, returnRoute } from "../../../utils";
+
 import dashboardRoutes from "../dashboardRoutes";
 
 export default class Dashboard extends React.Component {
@@ -60,9 +62,19 @@ export default class Dashboard extends React.Component {
           }}
         >
           <Navbar logout={this.logout} />
-          <Switch>
-            {dashboardRoutes.map((route, key) => returnRoute(route, key))}
-          </Switch>
+          <div className="content">
+            <Grid fluid>
+              <Row>
+                <div className="col-md-6 offset-md-3">
+                  <Switch>
+                    {dashboardRoutes.map((route, key) =>
+                      returnRoute(route, key)
+                    )}
+                  </Switch>
+                </div>
+              </Row>
+            </Grid>
+          </div>
         </div>
       </div>
     );
