@@ -13,6 +13,7 @@
     "react-albus": "^2.0.0",
     "react-datepicker": "^1.7.0",
     "react-dom": "^16.5.2",
+    "react-icons": "^3.2.2",
     "react-moment-proptypes": "^1.6.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
