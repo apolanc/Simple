@@ -1,114 +1,105 @@
 import React from "react";
+import { Row, FormGroup } from "../../../common";
 
 const FirstBusinessInfoForm = () => (
-  <div className="container">
-    <div className="row">
-      <div className="form-group col-md-6">
-        <label htmlFor="company_name" className="bussines-label-form">
-          Company Name
+  <Row>
+    <div className="col-md-12">
+      <FormGroup>
+        <label className="control-label" htmlFor="test">
+          Organization Name
         </label>
-        <input
-          type="text"
-          className="form-control form-control-sm"
-          name="company_name"
-        />
-      </div>
-      <div className="form-group col-md-6">
-        <label htmlFor="company_name" className="bussines-label-form">
-          Company DBA
-        </label>
-        <input
-          type="text"
-          className="form-control form-control-sm"
-          name="company_dba"
-        />
-      </div>
+        <input type="text" className="form-control" />
+      </FormGroup>
     </div>
-
-    <div className="row">
-      <div className="form-group col-md-6">
-        <label htmlFor="company_name" className="bussines-label-form">
-          Company Phone #
+    <div className="col-md-12">
+      <FormGroup>
+        <label className="control-label" htmlFor="test">
+          Corporate Name
         </label>
-        <input
-          type="text"
-          className="form-control form-control-sm"
-          name="company_phone"
-        />
-      </div>
-
-      <div className="form-group col-md-6">
-        <label htmlFor="company_name" className="bussines-label-form">
-          Company Website
-        </label>
-        <input
-          type="text"
-          className="form-control form-control-sm"
-          name="company_site"
-        />
-      </div>
+        <input type="text" className="form-control" />
+      </FormGroup>
     </div>
-
-    <div className="row">
-      <div className="form-group col-md-6">
-        <label htmlFor="company_name" className="bussines-label-form">
-          Organization Type
+    <div className="col-md-6">
+      <FormGroup>
+        <label className="control-label" htmlFor="test">
+          Year Established
         </label>
-        <select
-          className="form-control form-control-sm"
-          name="organization_type"
-        />
-      </div>
-
-      <div className="form-group col-md-6">
-        <label htmlFor="type_of_business" className="bussines-label-form">
-          Type of Business
+        <input type="text" className="form-control" />
+      </FormGroup>
+    </div>
+    <div className="col-md-6">
+      <FormGroup>
+        <label className="control-label" htmlFor="test">
+          Business Type
         </label>
-        <select
-          className="form-control form-control-sm"
-          name="type_of_business"
-        />
-      </div>
+        <input type="text" className="form-control" />
+      </FormGroup>
     </div>
-
-    <div className="row">
-      <div className="form-group col-md-6">
-        <label htmlFor="addl_selection" className="bussines-label-form">
-          Additional Selection
+    <div className="col-md-6">
+      <FormGroup>
+        <label className="control-label" htmlFor="test">
+          Registration Number
         </label>
-        <select
-          className="form-control form-control-sm"
-          name="addl_selection"
-        />
-      </div>
-
-      <div className="form-group col-md-6">
-        <label htmlFor="tax_id" className="bussines-label-form">
-          Tax ID
+        <input type="text" className="form-control" />
+      </FormGroup>
+    </div>
+    <div className="col-md-6">
+      <FormGroup>
+        <label className="control-label" htmlFor="test">
+          Federal Tax ID
         </label>
-        <input
-          type="text"
-          className="form-control form-control-sm"
-          name="tax_id"
-        />
-      </div>
+        <input type="text" className="form-control" />
+      </FormGroup>
     </div>
-
-    <div className="row">
-      <div className="form-group col-md-12">
-        <input type="checkbox" name="company_name" />
-        <span className="bussines-label-form">
-          Has this business ever processed credit card?
-        </span>
-      </div>
+    <div className="col-md-12">
+      <FormGroup>
+        <label className="control-label" htmlFor="test">
+          DBA Name
+        </label>
+        <input type="text" className="form-control" />
+      </FormGroup>
     </div>
-
-    <div className="forms-button-container">
-      <button type="button" className="forms-button">
-        Next
-      </button>
+    <div className="col-md-6">
+      <FormGroup>
+        <label className="control-label" htmlFor="test">
+          DBA Ownership since
+        </label>
+        <input type="text" className="form-control" />
+      </FormGroup>
     </div>
-  </div>
+    <div className="col-md-6">
+      <FormGroup>
+        <label className="control-label" htmlFor="test">
+          Total Location Count
+        </label>
+        <input type="text" className="form-control" />
+      </FormGroup>
+    </div>
+    <div className="col-md-6">
+      <FormGroup>
+        <label className="control-label" htmlFor="test">
+          Country of origin
+        </label>
+        <input type="text" className="form-control" />
+      </FormGroup>
+    </div>
+    <div className="col-md-6">
+      <FormGroup>
+        <label className="control-label" htmlFor="test">
+          Country of primary operations
+        </label>
+        <input type="text" className="form-control" />
+      </FormGroup>
+    </div>
+    <div className="col-md-12">
+      <FormGroup>
+        <label className="control-label" htmlFor="test">
+          Geography footprint (Licensed country to do business)
+        </label>
+        <textarea rows={4} className="form-control" />
+      </FormGroup>
+    </div>
+  </Row>
 );
 
 export default FirstBusinessInfoForm;
