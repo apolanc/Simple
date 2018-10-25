@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import ReactRouterPropTypes from "react-router-prop-types";
 
 // import { PRequirementsForm, PRequirementsSlider } from "../components";
 import { Card, Grid, Row, FormGroup } from "../../../common";
@@ -141,8 +142,12 @@ const CardContent = () => (
   </form>
 );
 
-const footerContent = () => (
-  <button type="button" className="btn btn-primary float-right">
+const footerContent = history => (
+  <button
+    type="button"
+    className="btn btn-primary float-right"
+    onClick={() => history.push("/dashboard/business-information")}
+  >
     Next
   </button>
 );
@@ -164,7 +169,7 @@ class ProcessingRequirements extends Component {
               <Card
                 title="Processing Requirements"
                 content={CardContent()}
-                footerContent={footerContent()}
+                footerContent={footerContent(this.props.history)}
               />
             </div>
           </Row>
@@ -179,6 +184,7 @@ ProcessingRequirements.defaultProps = {
 };
 
 ProcessingRequirements.propTypes = {
+  history: ReactRouterPropTypes.history.isRequired,
   onComponentRedirect: PropTypes.func
 };
 
