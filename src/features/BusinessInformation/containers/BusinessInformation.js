@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { Card } from "../../../common";
+import ReactRouterPropTypes from "react-router-prop-types";
+
+import { formWrapper } from "../../../common";
 import {
   ExemptionForm,
   SalesInfoForm,
@@ -7,37 +9,30 @@ import {
   FirstBusinessInfoForm
 } from "../components";
 
-const CardContent = () => (
-  <form>
-    <hr />
-    <FirstBusinessInfoForm />
-    <hr />
-    <ContactInfoForm type="corporate" />
-    <hr />
-    <SalesInfoForm />
-    <hr />
-    <ExemptionForm />
-  </form>
-);
-
-const footerContent = () => (
-  <button type="button" className="btn btn-primary float-right">
-    Next
-  </button>
-);
-
 class BusinessInformation extends Component {
-  componentDidMount() {}
+  handleBack() {
+    const { history } = this.props;
+    history.push("/dashboard/processing-requirements");
+  }
 
   render() {
     return (
-      <Card
-        title="Business Information"
-        content={<CardContent />}
-        footerContent={footerContent()}
-      />
+      <form>
+        <hr />
+        <FirstBusinessInfoForm />
+        <hr />
+        <ContactInfoForm type="corporate" />
+        <hr />
+        <SalesInfoForm />
+        <hr />
+        <ExemptionForm />
+      </form>
     );
   }
 }
 
-export default BusinessInformation;
+BusinessInformation.propTypes = {
+  history: ReactRouterPropTypes.history.isRequired
+};
+
+export default formWrapper(BusinessInformation);

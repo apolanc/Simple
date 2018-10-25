@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import ReactRouterPropTypes from "react-router-prop-types";
 
 // import { PRequirementsForm, PRequirementsSlider } from "../components";
-import { Card, Row, FormGroup } from "../../../common";
+import { Row, FormGroup, formWrapper } from "../../../common";
 
 const CardContent = () => (
   <form>
@@ -142,32 +141,14 @@ const CardContent = () => (
   </form>
 );
 
-const footerContent = history => (
-  <button
-    type="button"
-    className="btn btn-primary float-right"
-    onClick={() => history.push("/dashboard/business-information")}
-  >
-    Next
-  </button>
-);
-
 class ProcessingRequirements extends Component {
-  componentDidMount() {}
-
-  redirectAndSave(evt = {}, name) {
-    const { onComponentRedirect } = this.props;
-    onComponentRedirect(evt, name);
+  handleNext() {
+    const { history } = this.props;
+    history.push("/dashboard/business-information");
   }
 
   render() {
-    return (
-      <Card
-        title="Processing Requirements"
-        content={CardContent()}
-        footerContent={footerContent(this.props.history)}
-      />
-    );
+    return <CardContent />;
   }
 }
 
@@ -176,8 +157,7 @@ ProcessingRequirements.defaultProps = {
 };
 
 ProcessingRequirements.propTypes = {
-  history: ReactRouterPropTypes.history.isRequired,
-  onComponentRedirect: PropTypes.func
+  history: ReactRouterPropTypes.history.isRequired
 };
 
-export default ProcessingRequirements;
+export default formWrapper(ProcessingRequirements);
