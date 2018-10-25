@@ -1,5 +1,6 @@
 import React from "react";
-import { Row, FormGroup } from "../../../common";
+import { IoIosCalendar } from "react-icons/io";
+import { Row, FormGroup, DatePicker } from "../../../common";
 
 const FirstBusinessInfoForm = () => (
   <Row>
@@ -24,7 +25,14 @@ const FirstBusinessInfoForm = () => (
         <label className="control-label" htmlFor="test">
           Year Established
         </label>
-        <input type="text" className="form-control" />
+        <div className="input-group mb-3">
+          <DatePicker className="form-control" />
+          <div className="input-group-append">
+            <span className="input-group-text" id="basic-addon2">
+              <IoIosCalendar />
+            </span>
+          </div>
+        </div>
       </FormGroup>
     </div>
     <div className="col-md-6">
@@ -64,7 +72,14 @@ const FirstBusinessInfoForm = () => (
         <label className="control-label" htmlFor="test">
           DBA Ownership since
         </label>
-        <input type="text" className="form-control" />
+        <div className="input-group mb-3">
+          <DatePicker className="form-control" />
+          <div className="input-group-append">
+            <span className="input-group-text" id="basic-addon2">
+              <IoIosCalendar />
+            </span>
+          </div>
+        </div>
       </FormGroup>
     </div>
     <div className="col-md-6">
