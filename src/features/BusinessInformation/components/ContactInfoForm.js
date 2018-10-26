@@ -143,9 +143,9 @@ const ContactInfoForm = ({ type, handleCheckboxChange }) => (
         <div className="col-md-12">
           <div className="form-check">
             <input
-              value=""
               type="checkbox"
               id="defaultCheck1"
+              name="showDBAAddressForm"
               className="form-check-input"
               onChange={handleCheckboxChange}
             />

@@ -11,6 +11,7 @@
     "rc-tooltip": "^3.7.3",
     "react": "^16.5.2",
     "react-albus": "^2.0.0",
+    "react-countries-input": "0.0.2",
     "react-datepicker": "^1.7.0",
     "react-dom": "^16.5.2",
     "react-icons": "^3.2.2",
