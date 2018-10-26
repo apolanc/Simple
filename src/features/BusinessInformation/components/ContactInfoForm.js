@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { Row, FormGroup } from "../../../common";
 
-const ContactInfoForm = ({ type }) => (
+const ContactInfoForm = ({ type, handleCheckboxChange }) => (
   <fieldset>
     <legend>{`${type === "corporate" ? "Corporate" : "DBA"} contact`}</legend>
     <Row>
@@ -147,6 +147,7 @@ const ContactInfoForm = ({ type }) => (
               type="checkbox"
               id="defaultCheck1"
               className="form-check-input"
+              onChange={handleCheckboxChange}
             />
             <label className="form-check-label" htmlFor="defaultCheck1">
               <strong>Address for DBA s the same as corporate address</strong>
@@ -159,11 +160,13 @@ const ContactInfoForm = ({ type }) => (
 );
 
 ContactInfoForm.defaultProps = {
-  type: ""
+  type: "",
+  handleCheckboxChange: () => undefined
 };
 
 ContactInfoForm.propTypes = {
-  type: PropTypes.string
+  type: PropTypes.string,
+  handleCheckboxChange: PropTypes.func
 };
 
 export default ContactInfoForm;
