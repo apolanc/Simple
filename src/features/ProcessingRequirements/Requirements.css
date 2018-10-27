@@ -112,9 +112,9 @@
 
 .span-container {
   text-align: center;
-  padding-top: 6px;
+  padding-top: 10px;
   font-family: sans-serif;
-  font-size: 1.7vh;
+  font-size: 12px;
 }
 
 .slider-container {
@@ -167,10 +167,10 @@
 }
 
 .payment-methods-container span {
-  margin-top: 8px;
+  margin-top: 10px;
   display: block;
   font-weight: bold;
-  font-size: 1.6vh;
+  font-size: 12px;
 }
 
 .e-commerce-side {

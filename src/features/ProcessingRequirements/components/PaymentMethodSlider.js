@@ -12,8 +12,12 @@ const PaymentMethodSlider = ({ sliderName, inputClass }) => (
       <Slider />
     </div>
     <div className="col-sm-12 col-md-12 col-lg-2">
-      <div className="input-group">
-        <input type="text" className={`form-control ${inputClass}`} disabled />
+      <div className="input-group input-group-sm">
+        <input
+          type="text"
+          className={`form-control form-control-sm ${inputClass}`}
+          disabled
+        />
         <div className="input-group-append">
           <span className="input-group-text" id="basic-addon2">
             <FaPercent />
