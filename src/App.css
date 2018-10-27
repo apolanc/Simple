@@ -51,3 +51,15 @@ button:hover {
   color: white;
   border: 1px solid #395dad;
 }
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__input-container {
+  width: 100%;
+}
+
+.react-datepicker-manager {
+  width: calc(100% - 41px);
+}
