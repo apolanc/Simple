@@ -4,6 +4,7 @@
   position: relative;
   float: right;
   width: 100%;
+  background-color: whitesmoke;
 }
 
 .main-panel > .footer {
