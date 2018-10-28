@@ -18,10 +18,10 @@ export default class Dashboard extends React.Component {
   componentDidMount() {
     const {
       history,
-      match: { path }
+      match: { url }
     } = this.props;
 
-    history.push(`${path}/processing-requirements`);
+    history.push(`${url}/processing-requirements`);
   }
 
   componentDidUpdate() {

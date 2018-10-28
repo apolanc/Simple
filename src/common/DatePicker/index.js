@@ -10,7 +10,6 @@ const DatePicker = props => {
   const { handleChange } = props;
   return (
     <Fragment>
-      <style>{".react-datepicker-wrapper{width: 100%}"}</style>
       <DatePickerComp {...props} onChange={handleChange} />
     </Fragment>
   );
