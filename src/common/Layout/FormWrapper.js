@@ -6,6 +6,12 @@ function formWrapper(Form) {
       super(props);
 
       this.state = { formInstance: undefined };
+
+      this.getFormInstance = this.getFormInstance.bind(this);
+
+      this.customProps = Object.assign({}, this.props, {
+        ref: this.getFormInstance
+      });
     }
 
     getFormInstance(instance) {
@@ -24,16 +30,12 @@ function formWrapper(Form) {
     }
 
     render() {
-      const props = Object.assign({}, this.props, {
-        ref: this.getFormInstance.bind(this)
-      });
-
       const { formInstance } = this.state;
 
       return (
         <Fragment>
           <div className="content">
-            <Form {...props} />
+            <Form {...this.customProps} />
           </div>
           <div className="footer">
             {formInstance &&

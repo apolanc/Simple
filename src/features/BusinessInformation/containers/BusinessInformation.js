@@ -13,11 +13,8 @@ class BusinessInformation extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      showDBAAddressForm: true
-    };
-
-    this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
+    this.state = {};
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   handleBack() {
@@ -25,13 +22,18 @@ class BusinessInformation extends Component {
     history.push("/dashboard/processing-requirements");
   }
 
-  handleCheckboxChange() {
-    const { showDBAAddressForm } = this.state;
-    this.setState({ showDBAAddressForm: !showDBAAddressForm });
+  handleInputChange(key, name, value) {
+    const obj = this.state[key]; // eslint-disable-line react/destructuring-assignment
+
+    this.setState({
+      [key]: { ...obj, [name]: value }
+    });
   }
 
   render() {
-    const { showDBAAddressForm } = this.state;
+    const { corporate } = this.state;
+
+    console.log(this.state);
 
     return (
       <form>
@@ -40,14 +42,15 @@ class BusinessInformation extends Component {
         <hr />
         <ContactInfoForm
           type="corporate"
-          handleCheckboxChange={this.handleCheckboxChange}
+          handleInputChange={this.handleInputChange}
         />
-        {showDBAAddressForm && (
-          <Fragment>
-            <hr />
-            <ContactInfoForm />
-          </Fragment>
-        )}
+        {corporate &&
+          corporate.showDBAAddressForm && (
+            <Fragment>
+              <hr />
+              <ContactInfoForm handleInputChange={this.handleInputChange} />
+            </Fragment>
+          )}
         <hr />
         <SalesInfoForm />
         <hr />

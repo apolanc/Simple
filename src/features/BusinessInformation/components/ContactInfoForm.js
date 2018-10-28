@@ -8,10 +8,19 @@ class ContactInfoForm extends Component {
     super(props);
 
     this.state = {};
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+  handleInputChange({ target }) {
+    const { type, handleInputChange } = this.props;
+
+    const value = target.type === "checkbox" ? target.checked : target.value;
+
+    handleInputChange(type || "dba", target.name, value);
   }
 
   render() {
-    const { type, handleCheckboxChange } = this.props;
+    const { type } = this.props;
 
     return (
       <fieldset>
@@ -87,9 +96,11 @@ class ContactInfoForm extends Component {
                 Country
               </label>
               <input
-                type="email"
+                type="text"
+                name="country"
                 className="form-control"
                 placeholder="e.g. Canada"
+                onChange={this.handleInputChange}
               />
             </FormGroup>
           </div>
@@ -100,8 +111,10 @@ class ContactInfoForm extends Component {
               </label>
               <input
                 type="text"
+                name="state"
                 className="form-control"
                 placeholder="e.g. Alberta"
+                onChange={this.handleInputChange}
               />
             </FormGroup>
           </div>
@@ -161,7 +174,7 @@ class ContactInfoForm extends Component {
                   id="defaultCheck1"
                   name="showDBAAddressForm"
                   className="form-check-input"
-                  onChange={handleCheckboxChange}
+                  onChange={this.handleInputChange}
                 />
                 <label className="form-check-label" htmlFor="defaultCheck1">
                   <strong>
@@ -178,13 +191,12 @@ class ContactInfoForm extends Component {
 }
 
 ContactInfoForm.defaultProps = {
-  type: "",
-  handleCheckboxChange: () => undefined
+  type: ""
 };
 
 ContactInfoForm.propTypes = {
   type: PropTypes.string,
-  handleCheckboxChange: PropTypes.func
+  handleInputChange: PropTypes.func.isRequired
 };
 
 export default ContactInfoForm;
