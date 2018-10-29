@@ -1,6 +1,7 @@
 import { isAuthenticated } from "../../utils";
 import { BusinessInformation } from "../BusinessInformation";
 import { ProcessingRequirements } from "../ProcessingRequirements";
+import { References } from "../References";
 
 export default [
   {
@@ -9,8 +10,7 @@ export default [
     component: ProcessingRequirements,
     isAuthenticated,
     privateRoute: true,
-    exact: true,
-    render: true
+    exact: true
   },
   {
     path: "/dashboard/business-information",
@@ -18,7 +18,14 @@ export default [
     component: BusinessInformation,
     isAuthenticated,
     privateRoute: true,
-    exact: true,
-    render: true
+    exact: true
+  },
+  {
+    path: "/dashboard/references",
+    name: "References",
+    component: References,
+    isAuthenticated,
+    privateRoute: true,
+    exact: true
   }
 ];

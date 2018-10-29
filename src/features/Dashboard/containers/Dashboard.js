@@ -21,7 +21,7 @@ export default class Dashboard extends React.Component {
       match: { url }
     } = this.props;
 
-    history.push(`${url}/processing-requirements`);
+    // history.push(`${url}/processing-requirements`);
   }
 
   componentDidUpdate() {

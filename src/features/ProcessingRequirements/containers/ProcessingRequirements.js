@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import ReactRouterPropTypes from "react-router-prop-types";
 
 import {
@@ -32,11 +32,11 @@ class ProcessingRequirements extends Component {
   render() {
     const { tags } = this.state;
     return (
-      <React.Fragment>
+      <Fragment>
         <SalesEstimate />
         <CurrentProcessing handleChange={this.handleChange} tags={tags} />
         <PaymentMethods />
-      </React.Fragment>
+      </Fragment>
     );
   }
 }
