@@ -1,6 +1,7 @@
 import React from "react";
+
 import { IoIosCalendar } from "react-icons/io";
-import { Row, FormGroup, DatePicker } from "../../../common";
+import { Row, FormGroup, DatePicker, CountriesSelector } from "../../../common";
 
 const FirstBusinessInfoForm = () => (
   <Row>
@@ -95,7 +96,7 @@ const FirstBusinessInfoForm = () => (
         <label className="control-label" htmlFor="test">
           Country of origin
         </label>
-        <input type="text" className="form-control" />
+        <CountriesSelector />
       </FormGroup>
     </div>
     <div className="col-md-6">
@@ -103,7 +104,7 @@ const FirstBusinessInfoForm = () => (
         <label className="control-label" htmlFor="test">
           Country of primary operations
         </label>
-        <input type="text" className="form-control" />
+        <CountriesSelector />
       </FormGroup>
     </div>
     <div className="col-md-12">
