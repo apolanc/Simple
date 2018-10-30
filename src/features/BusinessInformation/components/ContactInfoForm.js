@@ -102,7 +102,7 @@ class ContactInfoForm extends Component {
               <PlaceAutocomplete
                 value={model.address1}
                 handleChange={address =>
-                  handleInputChange(type || "dba", "address1", address)
+                  handleInputChange(type || "dbaContact", "address1", address)
                 }
                 handleSelect={this.handleSelectAddress}
               />

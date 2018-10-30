@@ -3,8 +3,9 @@ import ReactRouterPropTypes from "react-router-prop-types";
 
 import {
   SalesEstimate,
-  CurrentProcessing,
-  PaymentMethods
+  SalesInfoForm,
+  PaymentMethods,
+  CurrentProcessing
 } from "../components";
 import { formWrapper } from "../../../common";
 
@@ -36,6 +37,8 @@ class ProcessingRequirements extends Component {
         <SalesEstimate />
         <CurrentProcessing handleChange={this.handleChange} tags={tags} />
         <PaymentMethods />
+        <hr />
+        <SalesInfoForm />
       </Fragment>
     );
   }

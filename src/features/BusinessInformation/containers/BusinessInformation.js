@@ -5,7 +5,6 @@ import { formWrapper } from "../../../common";
 import { contactDefaultProps } from "../../../types";
 import {
   ExemptionForm,
-  SalesInfoForm,
   ContactInfoForm,
   FirstBusinessInfoForm
 } from "../components";
@@ -68,8 +67,6 @@ class BusinessInformation extends Component {
             />
           </Fragment>
         )}
-        <hr />
-        <SalesInfoForm />
         <hr />
         <ExemptionForm />
       </form>
