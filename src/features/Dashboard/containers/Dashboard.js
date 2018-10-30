@@ -16,16 +16,23 @@ export default class Dashboard extends React.Component {
   }
 
   componentDidMount() {
-    const {
-      history,
-      match: { url }
-    } = this.props;
-
-    history.push(`${url}/processing-requirements`);
+    const { history } = this.props;
+    history.push(this.getCurrentUrl());
   }
 
   componentDidUpdate() {
     this.mainPanel.scrollTop = 0;
+  }
+
+  getCurrentUrl() {
+    const {
+      match: { url },
+      location: { pathname }
+    } = this.props;
+
+    return pathname !== "/dashboard"
+      ? pathname
+      : `${url}/processing-requirements`;
   }
 
   getCurrentRouteTitle() {

@@ -24,7 +24,14 @@ const CurrentProcessing = ({ tags, handleChange }) => (
             <label className="control-label" htmlFor="test">
               Current Processors
             </label>
-            <TagsInput value={tags} onChange={e => handleChange(e, "tags")} />
+            <TagsInput
+              value={tags}
+              onChange={e => handleChange(e, "tags")}
+              addKeys={[32, 9, 13, 188]}
+              onlyUnique
+              addOnBlur
+              addOnPaste
+            />
           </FormGroup>
         </div>
       </Row>

@@ -15,6 +15,11 @@ class BusinessInformation extends Component {
     history.push("/dashboard/processing-requirements");
   }
 
+  handleNext() {
+    const { history } = this.props;
+    history.push("/dashboard/references");
+  }
+
   render() {
     return (
       <form>
