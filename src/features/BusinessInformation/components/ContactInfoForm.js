@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
+import { contactType } from "../../../types";
 import { Row, FormGroup, PlaceAutocomplete } from "../../../common";
 
 class ContactInfoForm extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSelectAddress = this.handleSelectAddress.bind(this);
   }
 
   handleInputChange({ target }) {
@@ -16,17 +17,42 @@ class ContactInfoForm extends Component {
 
     const value = target.type === "checkbox" ? target.checked : target.value;
 
-    handleInputChange(type || "dba", target.name, value);
+    handleInputChange(type || "dbaContact", target.name, value);
+  }
+
+  handleSelectAddress(result) {
+    const { type, handleInputChange } = this.props;
+
+    const { address_components: addressComponents } = result;
+
+    handleInputChange(
+      type || "dbaContact",
+      "address1",
+      result.formatted_address
+    );
+
+    addressComponents.forEach(comp => {
+      if (
+        comp.types.includes("sublocality") ||
+        comp.types.includes("locality")
+      ) {
+        handleInputChange(type || "dbaContact", "city", comp.long_name);
+      } else if (comp.types.includes("administrative_area_level_1")) {
+        handleInputChange(type || "dbaContact", "region", comp.long_name);
+      } else if (comp.types.includes("postal_code")) {
+        handleInputChange(type || "dbaContact", "zip_postal", comp.long_name);
+      } else if (comp.types.includes("country")) {
+        handleInputChange(type || "dbaContact", "country", comp.long_name);
+      }
+    });
   }
 
   render() {
-    const { type } = this.props;
+    const { type, model, handleInputChange } = this.props;
 
     return (
       <fieldset>
-        <legend>
-          {`${type === "corporate" ? "Corporate" : "DBA"} contact`}
-        </legend>
+        <legend>{`${type === "contact" ? "Corporate" : "DBA"} contact`}</legend>
         <Row>
           <div className="col-md-12">
             <FormGroup>
@@ -74,7 +100,11 @@ class ContactInfoForm extends Component {
                 Street Address
               </label>
               <PlaceAutocomplete
-                handleSelect={results => console.log(results)}
+                value={model.address1}
+                handleChange={address =>
+                  handleInputChange(type || "dba", "address1", address)
+                }
+                handleSelect={this.handleSelectAddress}
               />
             </FormGroup>
           </div>
@@ -85,7 +115,10 @@ class ContactInfoForm extends Component {
               </label>
               <input
                 type="text"
+                name="address2"
+                value={model.address2}
                 className="form-control"
+                onChange={this.handleInputChange}
                 placeholder="Apartment, suite, building, etc. (optional)"
               />
             </FormGroup>
@@ -98,6 +131,7 @@ class ContactInfoForm extends Component {
               <input
                 type="text"
                 name="country"
+                value={model.country}
                 className="form-control"
                 placeholder="e.g. Canada"
                 onChange={this.handleInputChange}
@@ -111,7 +145,8 @@ class ContactInfoForm extends Component {
               </label>
               <input
                 type="text"
-                name="state"
+                name="region"
+                value={model.region}
                 className="form-control"
                 placeholder="e.g. Alberta"
                 onChange={this.handleInputChange}
@@ -124,9 +159,12 @@ class ContactInfoForm extends Component {
                 City
               </label>
               <input
-                type="email"
+                type="text"
+                name="city"
+                value={model.city}
                 className="form-control"
                 placeholder="e.g. Edmonton"
+                onChange={this.handleInputChange}
               />
             </FormGroup>
           </div>
@@ -137,8 +175,11 @@ class ContactInfoForm extends Component {
               </label>
               <input
                 type="text"
+                name="zip_postal"
+                value={model.zip_postal}
                 className="form-control"
                 placeholder="e.g. T5A M05"
+                onChange={this.handleInputChange}
               />
             </FormGroup>
           </div>
@@ -148,9 +189,12 @@ class ContactInfoForm extends Component {
                 Building Type
               </label>
               <input
-                type="email"
+                type="text"
+                name="type"
+                value={model.type}
                 className="form-control"
                 placeholder="Pick One"
+                onChange={this.handleInputChange}
               />
             </FormGroup>
           </div>
@@ -160,19 +204,22 @@ class ContactInfoForm extends Component {
                 Years at address
               </label>
               <input
-                type="text"
+                type="number"
+                name="yearsAt"
+                value={model.yearsAt}
                 className="form-control"
                 placeholder="Time this address has been used"
+                onChange={this.handleInputChange}
               />
             </FormGroup>
           </div>
-          {type === "corporate" && (
+          {type === "contact" && (
             <div className="col-md-12">
               <div className="form-check">
                 <input
                   type="checkbox"
                   id="defaultCheck1"
-                  name="showDBAAddressForm"
+                  name="hideDBAAddressForm"
                   className="form-check-input"
                   onChange={this.handleInputChange}
                 />
@@ -196,6 +243,7 @@ ContactInfoForm.defaultProps = {
 
 ContactInfoForm.propTypes = {
   type: PropTypes.string,
+  model: contactType.isRequired,
   handleInputChange: PropTypes.func.isRequired
 };
 

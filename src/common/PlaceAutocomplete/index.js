@@ -7,31 +7,25 @@ import PlacesAutocomplete, {
 class PlaceAutocomplete extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { address: "" };
 
-    this.handleChange = this.handleChange.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
-  }
-
-  handleChange(address) {
-    this.setState({ address });
   }
 
   handleSelect(address) {
     const { handleSelect } = this.props;
 
     geocodeByAddress(address)
-      .then(handleSelect)
+      .then(results => handleSelect(results[0]))
       .catch(error => console.error("Error", error));
   }
 
   render() {
-    const { address } = this.state;
+    const { value, handleChange } = this.props;
 
     return (
       <PlacesAutocomplete
-        value={address}
-        onChange={this.handleChange}
+        value={value}
+        onChange={handleChange}
         onSelect={this.handleSelect}
       >
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
@@ -72,6 +66,8 @@ class PlaceAutocomplete extends React.Component {
 }
 
 PlaceAutocomplete.propTypes = {
+  value: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
   handleSelect: PropTypes.func.isRequired
 };
 
