@@ -36,8 +36,7 @@ export const returnRoute = (
     isAuthenticated: authed,
     from,
     to,
-    exact,
-    render
+    exact
   },
   key
 ) => {
@@ -54,16 +53,6 @@ export const returnRoute = (
   if (redirect) {
     return (
       <Redirect exact={exact} key={`${name}+${key + 1}`} from={from} to={to} />
-    );
-  }
-  if (render) {
-    return (
-      <PrivateRoute
-        key={`${name}+${key + 1}`}
-        path={path}
-        component={component}
-        isAuthenticated={authed}
-      />
     );
   }
   return (

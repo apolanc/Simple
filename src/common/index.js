@@ -7,5 +7,6 @@ export { default as ListItem } from "./list/list-item";
 export { default as DatePicker } from "./DatePicker";
 export { default as CountriesSelector } from "./CountriesSelector";
 export { default as PlaceAutocomplete } from "./PlaceAutocomplete";
+export { default as MiniCard } from "./MiniCard";
 
 export { Card, Grid, Row, FormGroup, formWrapper };

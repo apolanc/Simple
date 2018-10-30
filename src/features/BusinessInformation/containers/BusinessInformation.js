@@ -41,6 +41,11 @@ class BusinessInformation extends Component {
     console.log(this.state);
   }
 
+  handleNext() {
+    const { history } = this.props;
+    history.push("/dashboard/references");
+  }
+
   render() {
     const { contact, dbaContact } = this.state;
 
