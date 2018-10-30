@@ -2,6 +2,7 @@ import { isAuthenticated } from "../../utils";
 import { BusinessInformation } from "../BusinessInformation";
 import { ProcessingRequirements } from "../ProcessingRequirements";
 import { References } from "../References";
+import { Owners } from "../Owners-Beneficiaries";
 
 export default [
   {
@@ -24,6 +25,14 @@ export default [
     path: "/dashboard/references",
     name: "References",
     component: References,
+    isAuthenticated,
+    privateRoute: true,
+    exact: true
+  },
+  {
+    path: "/dashboard/owners",
+    name: "Owners",
+    component: Owners,
     isAuthenticated,
     privateRoute: true,
     exact: true

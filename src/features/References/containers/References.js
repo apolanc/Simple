@@ -16,6 +16,11 @@ class References extends Component {
     history.push("/dashboard/business-information");
   }
 
+  handleNext() {
+    const { history } = this.props;
+    history.push("/dashboard/owners");
+  }
+
   addReference() {
     this.window.alert("adding a ref!");
   }
