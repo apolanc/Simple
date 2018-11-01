@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { IoIosAddCircleOutline } from "react-icons/io";
+import { IoIosAddCircleOutline, IoMdCreate } from "react-icons/io";
 
-const MiniCard = ({ onCardClick }) => (
+const MiniCard = ({ onCardClick, content, onEditClick }) => (
   <div
     className="add-card"
     onClick={() => onCardClick()}
@@ -10,19 +10,61 @@ const MiniCard = ({ onCardClick }) => (
     onKeyDown={() => {}}
     tabIndex={-2}
   >
-    <i>
-      <IoIosAddCircleOutline />
-    </i>
-    <span>Add Reference</span>
+    {content.id ? (
+      <React.Fragment>
+        <div className="header">
+          <span>{content.title}</span>
+        </div>
+        <div className="content">
+          <span>{content.email}</span>
+          <span>{content.phone}</span>
+        </div>
+        <div className="footer">
+          <span>{content.footerInfoLeft}</span>
+          {/* {!content.personalGuarantee ? (
+            <div className="badge">PG</div>
+          ) : (
+            <div className="badge-success">PG</div>
+          )} */}
+          <i
+            className="fa fa-pencil fa-custom"
+            role="button"
+            onKeyDown={() => undefined}
+            tabIndex={-10}
+            onClick={() => onEditClick()}
+          >
+            <IoMdCreate />
+          </i>
+        </div>
+      </React.Fragment>
+    ) : (
+      <React.Fragment>
+        <i>
+          <IoIosAddCircleOutline />
+        </i>
+        <span>Add Reference</span>
+      </React.Fragment>
+    )}
   </div>
 );
 
 MiniCard.defaultProps = {
-  onCardClick: () => undefined
+  onCardClick: () => undefined,
+  onEditClick: () => undefined,
+  content: {
+    personalGuarantee: false
+  }
 };
 
 MiniCard.propTypes = {
-  onCardClick: PropTypes.func
+  onCardClick: PropTypes.func,
+  onEditClick: PropTypes.func,
+  content: PropTypes.objectOf({
+    title: PropTypes.string,
+    email: PropTypes.string,
+    footerInfoLeft: PropTypes.string,
+    personalGuarantee: PropTypes.bool
+  })
 };
 
 export default MiniCard;

@@ -30,32 +30,32 @@
   padding: 15px;
 }
 
-.card .content {
+.card > .content {
   padding: 0px 15px 10px 15px;
 }
 
-.card .header {
+.card > .header {
   padding: 15px 15px 0;
 }
 
-.card .title {
+.card > .title {
   margin: 0;
   color: #333333;
   font-weight: 300;
 }
 
-.card .footer {
+.card > .footer {
   padding: 15px;
   background-color: transparent;
   line-height: 30px;
 }
 
-.card .footer hr {
+.card > .footer hr {
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
-.card .footer div {
+.card > .footer div {
   display: inline-block;
 }
 
