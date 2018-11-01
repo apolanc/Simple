@@ -136,3 +136,87 @@ button:hover {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
+
+.add-card > .header {
+  padding: 10px;
+  text-align: left;
+}
+
+.add-card > .header > span {
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.add-card > .content {
+  text-align: right;
+  padding: 10px;
+  margin-top: -10px;
+  margin-right: 10px;
+}
+
+.add-card > .content > span {
+  color: white;
+  display: block;
+  font-family: sans-serif;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.add-card > .footer {
+  border-top: 1px solid #52aff5;
+}
+
+.add-card > .footer > span {
+  color: white;
+  font-family: sans-serif;
+  font-size: 12px;
+  float: left;
+  padding: 12px;
+}
+
+.fa-custom {
+  color: white;
+  font-size: 25px;
+  float: right;
+  margin: 5px 10px;
+}
+
+.add-card > .footer > .badge {
+  color: white;
+  background: lightgray;
+  padding: 4px;
+  border-radius: 50%;
+  font-family: sans-serif;
+  font-size: 13px;
+  margin: 7px;
+  float: left;
+}
+
+.add-card > .footer > .badge-success {
+  color: white;
+  background: #b0d585;
+  padding: 4px;
+  border-radius: 50%;
+  font-family: sans-serif;
+  font-size: 13px;
+  margin: 7px;
+  float: left;
+}
+
+.add-card:hover > .header {
+  opacity: 0.8;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.add-card:hover > .content {
+  opacity: 0.8;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
