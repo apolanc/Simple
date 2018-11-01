@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { IoIosAddCircleOutline } from "react-icons/io";
+import { IoIosAddCircleOutline, IoMdCreate } from "react-icons/io";
 
 const MiniCard = ({ onCardClick, content, onEditClick }) => (
   <div
@@ -10,7 +10,7 @@ const MiniCard = ({ onCardClick, content, onEditClick }) => (
     onKeyDown={() => {}}
     tabIndex={-2}
   >
-    {content && (
+    {content.id ? (
       <React.Fragment>
         <div className="header">
           <span>{content.title}</span>
@@ -21,22 +21,23 @@ const MiniCard = ({ onCardClick, content, onEditClick }) => (
         </div>
         <div className="footer">
           <span>{content.footerInfoLeft}</span>
-          {content.personalGuarantee ? (
+          {/* {!content.personalGuarantee ? (
             <div className="badge">PG</div>
           ) : (
             <div className="badge-success">PG</div>
-          )}
+          )} */}
           <i
             className="fa fa-pencil fa-custom"
             role="button"
             onKeyDown={() => undefined}
             tabIndex={-10}
             onClick={() => onEditClick()}
-          />
+          >
+            <IoMdCreate />
+          </i>
         </div>
       </React.Fragment>
-    )}
-    {!content && (
+    ) : (
       <React.Fragment>
         <i>
           <IoIosAddCircleOutline />
@@ -50,13 +51,20 @@ const MiniCard = ({ onCardClick, content, onEditClick }) => (
 MiniCard.defaultProps = {
   onCardClick: () => undefined,
   onEditClick: () => undefined,
-  content: {}
+  content: {
+    personalGuarantee: false
+  }
 };
 
 MiniCard.propTypes = {
   onCardClick: PropTypes.func,
   onEditClick: PropTypes.func,
-  content: PropTypes.objectOf(PropTypes.any)
+  content: PropTypes.objectOf({
+    title: PropTypes.string,
+    email: PropTypes.string,
+    footerInfoLeft: PropTypes.string,
+    personalGuarantee: PropTypes.bool
+  })
 };
 
 export default MiniCard;

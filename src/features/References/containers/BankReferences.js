@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { MiniCard, Modal } from "../../../common";
+import { MiniCard, Modal, Row } from "../../../common";
 import { BankReferencesForm } from "../components";
 
 class BankReferences extends Component {
@@ -31,7 +31,9 @@ class BankReferences extends Component {
           <legend>
             <h3 className="bottom-border">Bank References</h3>
           </legend>
-          <MiniCard onCardClick={this.onCardClick} />
+          <Row>
+            <MiniCard onCardClick={this.onCardClick} />
+          </Row>
         </fieldset>
         <Modal
           component={BankReferencesForm}
