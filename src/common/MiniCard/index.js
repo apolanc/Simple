@@ -10,7 +10,7 @@ const MiniCard = ({ onCardClick, content, onEditClick }) => (
     onKeyDown={() => {}}
     tabIndex={-2}
   >
-    {content.id ? (
+    {content && content.id ? (
       <React.Fragment>
         <div className="header">
           <span>{content.title}</span>
@@ -51,20 +51,13 @@ const MiniCard = ({ onCardClick, content, onEditClick }) => (
 MiniCard.defaultProps = {
   onCardClick: () => undefined,
   onEditClick: () => undefined,
-  content: {
-    personalGuarantee: false
-  }
+  content: undefined
 };
 
 MiniCard.propTypes = {
   onCardClick: PropTypes.func,
   onEditClick: PropTypes.func,
-  content: PropTypes.objectOf({
-    title: PropTypes.string,
-    email: PropTypes.string,
-    footerInfoLeft: PropTypes.string,
-    personalGuarantee: PropTypes.bool
-  })
+  content: PropTypes.objectOf(PropTypes.any)
 };
 
 export default MiniCard;
