@@ -2,7 +2,7 @@ import React from "react";
 import ReactRouterPropTypes from "react-router-prop-types";
 
 import { Switch } from "react-router-dom";
-import { Navbar } from "../components";
+import { Navbar, Breadcrumb } from "../components";
 import { Grid, Row } from "../../../common";
 import { logout, returnRoute } from "../../../utils";
 
@@ -63,6 +63,7 @@ export default class Dashboard extends React.Component {
         >
           <Navbar logout={this.logout} />
           <div className="content">
+            <Breadcrumb />
             <Grid fluid>
               <Row>
                 <div className="col-md-6 offset-md-3">
