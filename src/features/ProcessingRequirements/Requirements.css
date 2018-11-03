@@ -1,0 +1,209 @@
+.requirements-container {
+  display: flex;
+  flex-direction: column;
+  height: 94%;
+  padding: 10px;
+}
+
+.requirements-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10% 0% 5% 0%;
+}
+
+.requirements-slider-container {
+  padding: 10%;
+}
+
+.slider-text-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.slider-text-label-left {
+  width: 100px;
+}
+
+.slider-text-label-right {
+  width: 131px;
+}
+
+.form-row {
+  margin: 15px;
+}
+
+.label-container {
+  padding: 5px;
+}
+
+/* Slider CSS */
+
+.rc-slider-rail {
+  height: 2px;
+}
+
+.rc-slider-step {
+  height: 2px;
+}
+
+.rc-slider-track {
+  height: 2px;
+  background-color: #4b9ddd;
+}
+
+.rc-slider-handle {
+  width: 17px;
+  height: 17px;
+  border: solid 2px #4b9ddd;
+  background-color: #4b9ddd;
+  margin-top: -8px;
+}
+
+.rc-slider-handle-click-focused:focus {
+  border-color: transparent;
+}
+
+.rc-slider-handle:active {
+  border: solid 2px #4b9ddd;
+  background-color: #4b9ddd;
+  box-shadow: 0 0 5px #4b9ddd;
+}
+
+.rc-slider-handle:hover {
+  border: 2px solid #4b9ddd;
+}
+
+/* Tags input */
+
+.react-tagsinput-input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.react-tagsinput {
+  border-radius: 5px !important;
+  height: 75px !important;
+}
+
+.react-tagsinput:hover {
+  cursor: text !important;
+}
+
+.react-tagsinput--focused {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff !important;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.react-tagsinput-tag {
+  background-color: #0073ef !important;
+  border: 1px solid #0073ef !important;
+  color: white !important;
+}
+
+.react-tagsinput-input {
+  width: 15% !important;
+}
+
+/* Payment Method Sliders */
+
+.span-container {
+  text-align: center;
+  padding-top: 10px;
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
+.slider-container {
+  padding-top: 12px;
+}
+
+.cash-slider-input {
+  background-color: #4fad31;
+  border: 1px solid gray;
+  color: black;
+}
+
+.cash-slider-input:disabled,
+.cash-slider-input[readonly] {
+  background-color: #4fad31;
+}
+
+.card-present-slider-input {
+  background-color: #4eb59a;
+  border: 1px solid gray;
+  color: black;
+}
+
+.card-present-slider-input:disabled,
+.card-present-slider-input[readonly] {
+  background-color: #4eb59a;
+}
+
+.e-commerce-slider-input {
+  background-color: #84cbc5;
+  border: 1px solid gray;
+  color: black;
+}
+
+.e-commerce-slider-input:disabled,
+.e-commerce-slider-input[readonly] {
+  background-color: #84cbc5;
+}
+
+/* Sliders payment methods bar */
+
+.payment-methods-container {
+  border: 1px solid gray;
+  height: 40px;
+  border-radius: 5px;
+  width: 50%;
+  justify-content: space-between;
+  display: flex;
+  padding: 0;
+}
+
+.payment-methods-container span {
+  margin-top: 10px;
+  display: block;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.e-commerce-side {
+  width: 32.333333%;
+  display: inline-block;
+  background-color: #4fad31;
+  color: white;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  height: 100%;
+  text-align: center;
+}
+
+.cash-side {
+  width: 33.333333%;
+  display: inline-block;
+  background-color: #4eb59a;
+  color: white;
+  height: 100%;
+  text-align: center;
+}
+
+.card-present-side {
+  width: 32.333333%;
+  display: inline-block;
+  background-color: #84cbc5;
+  color: white;
+  height: 100%;
+  text-align: center;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+/* #4fad31 first 
+#4eb59a
+#84cbc5 */

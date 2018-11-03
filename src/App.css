@@ -26,3 +26,213 @@
     transform: rotate(360deg);
   }
 }
+
+button:hover {
+  cursor: pointer;
+}
+
+.forms-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 55px;
+}
+
+.forms-button {
+  background-color: #4b9ddd;
+  color: white;
+  border: 1px solid #4b9ddd;
+  border-radius: 5px;
+  height: 36px;
+  width: 15%;
+}
+
+.forms-button:hover {
+  background-color: #395dad;
+  color: white;
+  border: 1px solid #395dad;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__input-container {
+  width: 100%;
+}
+
+.react-datepicker-manager {
+  width: calc(100% - 41px);
+}
+
+.modal-title {
+  width: 100%;
+}
+
+.add-card {
+  border: 1px solid #42a5f6;
+  height: 140px;
+  width: 190px;
+  margin: 10px 0px 35px 20px;
+  border-radius: 5px;
+  background-color: #42a5f6;
+  box-shadow: 0 3px 10px 2px #929292;
+  text-align: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.add-card:hover {
+  cursor: pointer;
+  background-color: #64b5f6;
+  border-color: #64b5f6;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.add-card > i {
+  font-size: 50px;
+  margin-top: 18px;
+  display: block;
+  opacity: 1;
+  color: white;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.add-card > span {
+  display: block;
+  color: white;
+  opacity: 1;
+  font-family: sans-serif;
+  font-size: 17px;
+  margin-top: -7px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.add-card:hover > i {
+  opacity: 0.7;
+  font-size: 70px;
+  margin-top: 17px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.add-card:hover > span {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.add-card > .header {
+  padding: 10px;
+  text-align: left;
+}
+
+.add-card > .header > span {
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.add-card > .content {
+  text-align: right;
+  padding: 10px;
+  margin-top: -10px;
+  margin-right: 10px;
+  max-height: 70px;
+}
+
+.add-card > .content > span {
+  color: white;
+  display: block;
+  font-family: sans-serif;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.add-card > .footer {
+  border-top: 1px solid #52aff5;
+}
+
+.add-card > .footer > span {
+  color: white;
+  font-family: sans-serif;
+  font-size: 12px;
+  float: left;
+  padding: 8px;
+}
+
+.fa-custom {
+  color: white;
+  font-size: 25px;
+  float: right;
+  margin-right: 5px;
+}
+
+.add-card > .footer > .badge {
+  color: white;
+  background: lightgray;
+  padding: 4px;
+  border-radius: 50%;
+  font-family: sans-serif;
+  font-size: 11px;
+  margin: 5px;
+  float: left;
+}
+
+.add-card > .footer > .badge-success {
+  color: white;
+  background: #b0d585;
+  padding: 4px;
+  border-radius: 50%;
+  font-family: sans-serif;
+  font-size: 11px;
+  margin: 5px;
+  float: left;
+}
+
+.add-card:hover > .header {
+  opacity: 0.8;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.add-card:hover > .content {
+  opacity: 0.8;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.breadcrumb {
+  margin-bottom: 0;
+  width: 48%;
+  margin-left: 25%;
+  background: transparent;
+}
+
+.breadcrumb > li > a {
+  text-decoration: none;
+}
+
+.breadcrumb-item > .active {
+  color: purple;
+}

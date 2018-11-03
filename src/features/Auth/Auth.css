@@ -2,7 +2,7 @@
 
 .login-form-container {
   display: flex;
-  height: 100%;
+  min-height: 100vh;
   justify-content: center;
   background-image: url("/assets/login-register.jpg");
   background-repeat: no-repeat;
@@ -10,6 +10,7 @@
   background-position: center center;
   flex-wrap: wrap;
   margin: 0;
+  position: relative;
 }
 
 .login-form-container::before {
@@ -44,10 +45,9 @@
 
 ::placeholder {
   color: #7e9ede;
-  padding-left: 38%;
 }
 
-input {
+.auth-input {
   height: 35px;
   width: 100%;
   padding: 0.3em;
@@ -60,8 +60,8 @@ input {
   color: #7e9ede;
 }
 
-input,
-button:focus {
+.auth-input,
+.submit-btn:focus {
   outline: none;
 }
 
@@ -85,7 +85,7 @@ button:focus {
   margin-top: 25px;
 }
 
-button:hover {
+.submit-btn:hover {
   cursor: pointer;
   background-color: #0040f3;
 }

@@ -6,6 +6,8 @@ import {
   RegisterForm,
   AuthFormContent
 } from "./components";
+import authReducer from "./authReducer";
+import "./Auth.css";
 
 export {
   ForgotPassword,
@@ -15,5 +17,6 @@ export {
   ForgotPasswordForm,
   LoginForm,
   RegisterForm,
-  AuthFormContent
+  AuthFormContent,
+  authReducer
 };
